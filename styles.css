@@ -1,0 +1,449 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #fbd534;
+    height: 400vh; /* Maintain increased height for extended scroll */
+}
+
+/* Styling for text selection */
+::selection {
+    background-color: black; /* Background color of the selected text */
+    color: white; /* Text color of the selected text for better contrast */
+}
+
+/* For better cross-browser support, also specify colors for webkit-based browsers */
+::-moz-selection {
+    background-color: black; /* Background color of the selected text */
+    color: white; /* Text color of the selected text */
+}
+
+::selection {
+    background-color: black; /* Background color of the selected text */
+    color: white; /* Text color of the selected text */
+}
+
+
+.jersey-10-charted-regular {
+	font-family: "Jersey 10 Charted", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+  }
+
+  .rowdies-bold {
+	font-family: "Rowdies", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+  }
+
+  h2{
+	font-size: 75px;
+  }
+
+  h1 {
+    font-size: 50px;
+    color: white;
+    background-color: black;
+    padding: 10px 20px; /* Adjust padding to control background size */
+    display: inline-block; /* Ensures the background size matches the text size */
+    border-radius: 5px; /* Optional: Add rounded corners for better aesthetics */
+}
+
+  
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #fbd534;
+    z-index: 10;
+    overflow: visible;
+}
+/* Ensure this CSS is added or updated in your styles.css file */
+
+.full-screen-text {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+    background-color:rgb(251 213 52); /* Optional background color */
+    color: white;
+    padding: 20px;
+    z-index: 11; /* Ensure it's above the container */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 1; /* Start visible */
+    transform: translateY(0); /* Start in place */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-screen-text.hidden {
+    transform: translateY(-100%); /* Move up out of view */
+    opacity: 0; /* Hide by fading out */
+}
+
+.center-image {
+    max-width: 80%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between image and text */
+    padding-top: 170px;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.8));
+    transform-style: preserve-3d; /* Enable 3D transformations */
+    transition: transform 0.3s ease-out; /* Add transition for smooth animation */
+    perspective: 800px; /* Set perspective for 3D effect */
+  }
+  
+  .containerimg {
+    perspective: 800px; /* Set perspective for 3D effect */
+  }
+
+
+.slide-up-text {
+    font-size: 20px;
+    text-align: center;
+    margin-top: auto; /* Push text to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	margin-top: 189px;
+}
+
+.slide-up-text p {
+    margin: 0;
+	font-family: "Rowdies", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	color: black;
+}
+
+.slide-up-text span {
+    font-size: 30px;
+    line-height: 1;
+    display: block;
+}
+.slide-up-text .arrow {
+    font-size: 30px;
+    margin-left: 10px; /* Space between text and arrow */
+    display: inline-block;
+}
+
+.slide-up-text p:hover .arrow {
+    color: #000000; /* Change arrow color on hover */
+    transform: translateY(-3px); /* Slight move effect on hover */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.parallax {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.element {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    /* Apply more pronounced drop-shadow to all elements */
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.7)); /* Increased shadow size */
+}
+
+.crane-left, .excavator {
+    transform: translateX(-100%);
+}
+
+.crane-right, .forklift {
+    transform: translateX(100%);
+}
+
+.crane-left {
+    top: 14%;
+    left: 27%;
+    background-image: url(images/20240825233153945.png);
+    width: 322px;
+    height: 445px;
+}
+
+.crane-right {
+    top: 6%;
+    right: 28%;
+    background-image: url(images/1724608501571.png);
+    width: 263px;
+    height: 400px;
+}
+
+.excavator {
+    bottom: 10%;
+    left: 16%;
+    background-image: url(images/20240825233125960.png);
+    width: 200px;
+    height: 300px;
+}
+
+.forklift {
+    bottom: 10%;
+    right: 19%;
+    background-image: url(images/20240825233137844.png);
+    width: 222px;
+    height: 300px;
+}
+
+.browser {
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.5);
+    background-image: url('images/20240825_232854.png');
+    width: 400px;
+    height: 568px;
+}
+
+.tape-image {
+    position: absolute;
+    top: -103px; /* adjust vertical positioning as needed */
+    left: 0; /* position from the left edge */
+    width: 100%; /* adjust size as needed */
+    height: auto; /* maintain aspect ratio */
+    z-index: 11; /* ensure it is above other elements */
+    transform-origin: right top;
+    transform: rotate(5deg);
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.5)); /* adds a drop shadow using filter */
+}
+
+.tape-image.mirror {
+    transform-origin: left top;
+    transform: rotate(-5deg);
+    left: auto; /* position from the right edge */
+    right: 0; /* instead of left, use right to position from the right edge */
+    filter: drop-shadow(-5px 5px 15px rgba(0, 0, 0, 0.5)); /* adds a drop shadow, flipped for the mirror image */
+}
+
+
+  .tape-image {
+    transform: translateY(100%) scale(0.9);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+  
+  .tape-image.mirror {
+    transform: translateY(100%) translateX(100%) scale(0.9);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+  }
+  
+  .tape-image.animate {
+    transform: translateY(0) scale(1);
+  }
+  
+  .tape-image.mirror.animate {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  
+
+.crane-left {
+    animation: crane-left-animation 3s ease-in-out infinite;
+  }
+  
+  .crane-right {
+    animation: crane-right-animation 4s ease-in-out infinite;
+  }
+  
+  .excavator {
+    animation: excavator-animation 2s ease-in-out infinite;
+  }
+  
+  .forklift {
+    animation: forklift-animation 5s ease-in-out infinite;
+  }
+  
+  @keyframes crane-left-animation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes crane-right-animation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes excavator-animation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-50px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes forklift-animation {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(70px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+.text-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: black;
+    overflow: hidden; /* Ensure no overflow during animation */
+}
+
+.text-container h1,
+.text-container h2 {
+    margin: 10px 0;
+    opacity: 0; /* Start hidden */
+    transform: translateX(-100%); /* Default off-screen */
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.text-container h2 {
+    transform: translateX(100%); /* Start off-screen to the right */
+}
+
+.text-container h1.show,
+.text-container h2.show {
+    opacity: 1;
+    transform: translateX(0); /* Move to the final position */
+}
+
+.text-container h1 {
+    transform: translateX(-100%); /* Start off-screen to the left */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Add shadow to h1 text */
+}
+
+.text-container h2 {
+    transform: translateX(100%); /* Start off-screen to the right */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Add shadow to h2 text */
+}
+
+.text-container h1.show,
+.text-container h2.show {
+    opacity: 1;
+    transform: translateX(0); /* Move to the final position */
+}
+
+.crane-left, .crane-right {
+    z-index: 2; /* Higher than the browser */
+    transform: translateX(-100%);
+}
+
+@media screen and (max-width: 600px){
+    .crane-left {
+        top: 21%;
+        left: 20.5%;
+        background-image: url(images/20240825233153945.png);
+        width: 100px;
+        height: 445px;
+    }
+    
+    .crane-right {
+        top: 18.5%;
+        right: 21.1%;
+        background-image: url(images/1724608501571.png);
+        width: 90px;
+        height: 400px;
+    }
+    
+    .excavator {
+        bottom:32%;
+        left: 6%;
+        background-image: url(images/20240825233125960.png);
+        width: 70px;
+        height: 300px;
+    }
+    
+    .forklift {
+        bottom: 30%;
+        right: 10%;
+        background-image: url(images/20240825233137844.png);
+        width: 70px;
+        height: 300px;
+    }
+    
+    .browser {
+        top: 24%;
+        left: 50%;
+        transform: translateX(-50%) scale(0.5);
+        background-image: url('images/20240825_232854.png');
+        width: 150px;
+        height: 568px;
+    }
+
+    h2 {
+        font-size: 30px;
+        white-space: nowrap; /* Prevents text from wrapping to the next line */
+        overflow: hidden;    /* Hides any overflow text */
+        text-overflow: ellipsis; /* Adds "..." if the text is too long */
+    }
+    
+    
+      h1 {
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        padding: 10px 20px; /* Adjust padding to control background size */
+        display: inline-block; /* Ensures the background size matches the text size */
+        border-radius: 5px; /* Optional: Add rounded corners for better aesthetics */
+    }
+
+    .text-container {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: black;
+        overflow: hidden; /* Ensure no overflow during animation */
+    }
+
+    .container {
+        position: fixed;
+        top: 15%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: #fbd534;
+        z-index: 10;
+    }
+    
+}
+    
